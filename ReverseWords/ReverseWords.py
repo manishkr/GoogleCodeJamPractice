@@ -1,18 +1,16 @@
 import sys
 
 def ReverseWords(inFile, outFile):
-    i = 0
     with open(inFile, 'r') as oFile, open(outFile, 'w') as wFile:
+        oFile.readline()
+        i = 1
         for line in oFile:
-            if i == 0:
-                i +=1
-            else:
-                words = line.split()
-                words.reverse()
-                wFile.write("Case #" + str(i) + ": ")
-                wFile.write(' '.join(words))
-                wFile.write('\n')
-                i +=1
+            words = line.split()
+            words.reverse()
+            wFile.write("Case #" + str(i) + ": ")
+            wFile.write(' '.join(words))
+            wFile.write('\n')
+            i +=1
 
 
 if __name__ == '__main__':
